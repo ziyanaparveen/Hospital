@@ -18,12 +18,16 @@
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet"
       href="{% static '/css/style.css' %}">
+      <link rel="stylesheet"
+      href="{% static '/css/app.css' %}">
+      <link rel="stylesheet"
+      href="{% static 'uikit/styles/uikit.css' %}">
 
   </head>
 
   <body>
 
-    <nav class="navbar bg-secondary navbar-expand-md ">
+    <!-- <nav class="navbar bg-secondary navbar-expand-md ">
       <div class="container">
         <div class="col-2 text-left pl-md-0">
           <h3 class="text-white"> City Hospital </h3>
@@ -54,7 +58,40 @@
         </div>
         
       </div>
-    </nav>
+    </nav>-->
+
+
+
+
+    <header class="header">
+      <div class="container container--narrow">
+        <a href="/" class="header__logo">
+          <h3 class="text-white">City Hospital </h3>
+        </a>
+        <nav class="header__nav">
+          <input type="checkbox" id="responsive-menu" />
+          <label for="responsive-menu" class="toggle-menu">
+            <span>Menu</span>
+            <div class="toggle-menu__lines"></div>
+          </label>
+          <ul class="header__menu">
+            <li class="header__menuItem"><a href="{% url 'home' %}">Home</a></li>
+            <li class="header__menuItem"><a href="{% url 'about' %}">About</a></li>
+            
+            <li class="header__menuItem"><a href="{% url 'booking' %}">Booking</a></li>
+            
+            
+            
+            <li class="header__menuItem"><a href="{% url 'doctors' %}">Doctors</a></li>
+          
+            <li class="header__menuItem"><a href="{% url 'department' %}">Departments</a></li>
+            
+            <li class="header__menuItem"><a href="{% url 'contact' %}">Contact Us</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
       
 
     {% block content %}
